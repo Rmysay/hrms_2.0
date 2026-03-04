@@ -1,0 +1,42 @@
+# ── Dependencies ──
+node_modules/
+backend/target/
+
+# ── Environment & Secrets (SOC2) ──
+.env
+.env.local
+.env.production
+.env.*.local
+*.pem
+*.key
+
+# ── Build Output ──
+dist/
+dist-ssr/
+build/
+*.jar
+
+# ── Logs ──
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ── IDE & Editor ──
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ── OS ──
+.DS_Store
+Thumbs.db
+
+# ── Docker local data ──
+docker-data/
