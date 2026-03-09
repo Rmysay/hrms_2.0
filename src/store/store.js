@@ -2,6 +2,7 @@ import { configureStore, createSlice } from '@reduxjs/toolkit';
 import authReducer from './authSlice';
 import organizationReducer from './organizationSlice';
 import talentReducer from './talentSlice';
+import recruitmentReducer from './recruitmentSlice';
 
 // Placeholder slice until real modules are added
 const appSlice = createSlice({
@@ -25,7 +26,7 @@ const store = configureStore({
         auth: authReducer,
         organization: organizationReducer,
         talent: talentReducer,
-        // recruitment: recruitmentReducer, // Adım 7
+        recruitment: recruitmentReducer,
         // performance: performanceReducer, // Adım 8
     },
 });
