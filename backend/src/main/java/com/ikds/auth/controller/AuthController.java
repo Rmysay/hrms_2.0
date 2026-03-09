@@ -19,6 +19,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -77,6 +78,20 @@ public class AuthController {
                     .body(Map.of("error", "Oturum açmanız gerekiyor"));
         }
         return ResponseEntity.ok(buildAuthResponse(user, null));
+    }
+
+    @GetMapping("/users")
+    public ResponseEntity<List<Map<String, Object>>> getUsers() {
+        List<Map<String, Object>> users = userRepository.findAll().stream().map(u -> Map.<String, Object>of(
+                "id", u.getId(),
+                "firstName", u.getFirstName(),
+                "lastName", u.getLastName(),
+                "email", u.getEmail(),
+                "department", u.getDepartment() != null ? u.getDepartment() : "",
+                "title", u.getTitle() != null ? u.getTitle() : "",
+                "roles", List.of(u.getRole().name())
+        )).toList();
+        return ResponseEntity.ok(users);
     }
 
     private AuthResponse buildAuthResponse(User user, String token) {

@@ -7,6 +7,8 @@ import Organization from './pages/Organization/Organization';
 import TalentManagement from './pages/Talent/TalentManagement';
 import Recruitment from './pages/Recruitment/Recruitment';
 import Performance from './pages/Performance/Performance';
+import EmployeePanel from './pages/Employees/EmployeePanel';
+import Reports from './pages/Reports/Reports';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import ProtectedRoute from './components/auth/ProtectedRoute';
@@ -60,8 +62,8 @@ function AppContent() {
         <Route path="/talent" element={<TalentManagement />} />
         <Route path="/recruitment" element={<Recruitment />} />
         <Route path="/performance" element={<Performance />} />
-        <Route path="/employees" element={<ComingSoon title="Çalışan Paneli" />} />
-        <Route path="/reports" element={<ComingSoon title="Raporlar & Analitik" />} />
+        <Route path="/employees" element={<EmployeePanel />} />
+        <Route path="/reports" element={<Reports />} />
       </Route>
     </Routes>
   );
