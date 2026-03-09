@@ -3,6 +3,7 @@ import authReducer from './authSlice';
 import organizationReducer from './organizationSlice';
 import talentReducer from './talentSlice';
 import recruitmentReducer from './recruitmentSlice';
+import performanceReducer from './performanceSlice';
 
 // Placeholder slice until real modules are added
 const appSlice = createSlice({
@@ -27,7 +28,7 @@ const store = configureStore({
         organization: organizationReducer,
         talent: talentReducer,
         recruitment: recruitmentReducer,
-        // performance: performanceReducer, // Adım 8
+        performance: performanceReducer,
     },
 });
 
